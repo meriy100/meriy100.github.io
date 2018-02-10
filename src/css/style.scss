@@ -1,3 +1,6 @@
-h1{
-  color: #F00;
-}
+@import './variables';
+
+body {
+  background: $white;
+  color:  $black;
+};
