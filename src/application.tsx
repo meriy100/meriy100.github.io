@@ -2,6 +2,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Router, Route, Link } from "react-router-dom";
 import createHistory from 'history/createHashHistory'
+import './css/style.scss'
 
 const customeHistory = createHistory();
 
@@ -35,7 +36,7 @@ class App extends React.Component {
 
 const Home = () => (
   <div>
-    <h2>Home</h2>
+    <h1>Home</h1>
   </div>
 );
 

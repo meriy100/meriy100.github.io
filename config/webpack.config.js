@@ -25,8 +25,20 @@ module.exports = {
         test: /\.json$/,
         loader: 'json'
       }, {
-        test: /\.css$/,
-        loader: 'style!css'
+        test: /\.scss/, // 対象となるファイルの拡張子
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              // オプションでCSS内のurl()メソッドの取り込みを禁止する¬
+              url: false,
+              // ソースマップを有効にする
+              sourceMap: true,
+            },
+          },
+          'sass-loader'
+        ]  
       }
     ]
   }
