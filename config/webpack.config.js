@@ -25,7 +25,7 @@ module.exports = {
         test: /\.json$/,
         loader: 'json'
       }, {
-        test: /\.scss/, // 対象となるファイルの拡張子
+        test: /\.(css|scss)$/, // 対象となるファイルの拡張子
         use: [
           'style-loader',
           {

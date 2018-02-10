@@ -2,6 +2,9 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Router, Route, Link } from "react-router-dom";
 import createHistory from 'history/createHashHistory'
+
+// style
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/style.scss'
 
 const customeHistory = createHistory();
