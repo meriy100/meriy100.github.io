@@ -1,10 +1,10 @@
 module.exports = {
   devtool: 'inline-source-map',
   entry: {
-    application: './src/application.ts'
+    application: './src/application.tsx'
   },
   output: {
-    path: './build',
+    path: `${__dirname}/../build`,
     filename: '[name].bundle.js'
   },
   resolve: {

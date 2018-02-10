@@ -1,6 +1,6 @@
 module.exports = {
   entry: {
-    application: './src/application.ts'
+    application: './src/application.tsx'
   },
   output: {
     path: './build',
