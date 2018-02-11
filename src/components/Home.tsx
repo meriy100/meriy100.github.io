@@ -21,7 +21,12 @@ var headerStyle = style.registerStyle({
       position: 'absolute',
       height : '620px',
       width : '100%',
-  } 
+  }, 
+
+  '@media (max-width: 575.98px)' : {
+    // height: "100vh",
+    height: "100%",
+  }
 });
 
 var titleStyle = style.registerStyle({
@@ -36,6 +41,35 @@ var titleStyle = style.registerStyle({
   }
 })
 
+var aboutStyle = style.registerStyle({
+  'h2' : {
+    fontSize: '30px',
+  },
+  'p' : {
+    fontSize: '16px',
+    lineHeight: '28px',
+    margin: '0',
+  }
+})
+
+var contactStyle = style.registerStyle({
+  position: 'absolute', 
+  bottom: '0',
+  '@media (max-width: 767.98px)' : {
+    position: 'relative',
+    top: '0',
+    bottom: 'auto',
+  },
+  'h2' : {
+    fontSize: '28px',
+  },
+  'p' : {
+    fontSize: '14px',
+    lineHeight: '20px',
+    margin: '0',
+  }
+})
+
 var styleElement = document.createElement('style')
 styleElement.textContent = style.getStyles()
 document.head.appendChild(styleElement)
@@ -46,8 +80,8 @@ const Header = () => (
       <h1>Kouta Kariyado</h1>
       <p>meriy100</p>
     </div>
-    <div className='row'>
-      <div className='col-md-8 '>
+    <div className='row' style={{ margin: 0 }}>
+      <div className={`col-md-7 offset-md-1 ${aboutStyle}`}>
         <h2>About</h2>
         <p>大学4年からエンジニアとして活動</p>
         <p>主に Web 開発をやっています</p>
@@ -55,12 +89,14 @@ const Header = () => (
         <p>修士ではソースコードの問題箇所検出を行いました</p>
         <p>2018年度より新社会人となります.  よろしくおねがいします</p>
       </div>
-      <div className='col-md-4'>
-        <h2>Contact</h2>
-        <p>○ ttattataa@gmail.com</p>
-        <p>○ https://github.com/meriy100</p>
-        <p>○ https://qiita.com/meriy100</p>
-        <p>○ https://www.facebook.com/kouta.kariyadon</p>
+      <div className={`col-md-4`}>
+        <div className={contactStyle} >
+          <h2>Contact</h2>
+          <p>○ ttattataa@gmail.com</p>
+          <p>○ https://github.com/meriy100</p>
+          <p>○ https://qiita.com/meriy100</p>
+          <p>○ https://www.facebook.com/kouta.kariyadon</p>
+        </div>
       </div>
     </div>
   </div>
