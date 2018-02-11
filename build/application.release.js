@@ -2793,7 +2793,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(81);
+var	fixUrls = __webpack_require__(82);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -3122,9 +3122,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createHashHistory__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createHashHistory___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_history_createHashHistory__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_Home__ = __webpack_require__(77);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_bootstrap_dist_css_bootstrap_min_css__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_bootstrap_dist_css_bootstrap_min_css__ = __webpack_require__(80);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_bootstrap_dist_css_bootstrap_min_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_bootstrap_dist_css_bootstrap_min_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__css_style_scss__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__css_style_scss__ = __webpack_require__(83);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__css_style_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__css_style_scss__);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -23830,39 +23830,94 @@ module.exports = function hoistNonReactStatics(targetComponent, sourceComponent,
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Variables__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_free_style__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_free_style___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_free_style__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Variables__ = __webpack_require__(79);
 
 
-var headerStyle = {
-    color: __WEBPACK_IMPORTED_MODULE_1__Variables__["b" /* whiteColor */],
+
+var style = __WEBPACK_IMPORTED_MODULE_1_free_style__["create"]();
+var headerStyle = style.registerStyle({
+    color: __WEBPACK_IMPORTED_MODULE_2__Variables__["a" /* pureWhiteColor */],
     backgroundImage: 'url("imgs/homeHeader.jpg")',
     width: "100%",
     height: "620px",
     WebkitTransition: 'all',
     msTransition: 'all',
     backgroundSize: "cover",
-    grass: {
-        backgroundColor: __WEBPACK_IMPORTED_MODULE_1__Variables__["a" /* blackColor */],
-        opacity: 0.6,
-        width: "100%",
+    position: 'relative',
+    '&:before': {
+        content: "''",
+        background: 'rgba(44,62,79,0.5)',
+        position: 'absolute',
+        height: '620px',
+        width: '100%',
+    },
+    '@media (max-width: 575.98px)': {
+        // height: "100vh",
         height: "100%",
     }
-};
-var Header = function () { return (__WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("div", { style: headerStyle },
-    __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("div", { style: headerStyle.grass },
+});
+var titleStyle = style.registerStyle({
+    position: 'relative',
+    textAlign: 'center',
+    paddingTop: '160px',
+    'h1': {
+        fontSize: '3.2rem',
+    },
+    'p': {
+        fontSize: '2rem',
+    }
+});
+var aboutStyle = style.registerStyle({
+    'h2': {
+        fontSize: '30px',
+    },
+    'p': {
+        fontSize: '16px',
+        lineHeight: '28px',
+        margin: '0',
+    }
+});
+var contactStyle = style.registerStyle({
+    position: 'absolute',
+    bottom: '0',
+    '@media (max-width: 767.98px)': {
+        position: 'relative',
+        top: '0',
+        bottom: 'auto',
+    },
+    'h2': {
+        fontSize: '28px',
+    },
+    'p': {
+        fontSize: '14px',
+        lineHeight: '20px',
+        margin: '0',
+    }
+});
+var styleElement = document.createElement('style');
+styleElement.textContent = style.getStyles();
+document.head.appendChild(styleElement);
+var Header = function () { return (__WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("div", { className: headerStyle },
+    __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("div", { className: titleStyle },
         __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("h1", null, "Kouta Kariyado"),
-        __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("p", null, "meriy100"),
-        __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("h2", null, "About"),
-        __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("p", null, "\u5927\u5B664\u5E74\u304B\u3089\u30A8\u30F3\u30B8\u30CB\u30A2\u3068\u3057\u3066\u6D3B\u52D5"),
-        __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("p", null, "\u0003\u4E3B\u306B Web \u958B\u767A\u3092\u3084\u3063\u3066\u3044\u307E\u3059\u0003"),
-        __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("p", null, "\u5B66\u90E8\u306E\u7814\u7A76\u306F Rails \u306E\u56FD\u969B\u5316\u6539\u5584"),
-        __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("p", null, "\u0003\u4FEE\u58EB\u3067\u306F\u30BD\u30FC\u30B9\u30B3\u30FC\u30C9\u306E\u554F\u984C\u7B87\u6240\u691C\u51FA\u3092\u884C\u3044\u307E\u3057\u305F"),
-        __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("p", null, "\u00032018\u5E74\u5EA6\u3088\u308A\u65B0\u793E\u4F1A\u4EBA\u3068\u306A\u308A\u307E\u3059.  \u3088\u308D\u3057\u304F\u304A\u306D\u304C\u3044\u3057\u307E\u3059"),
-        __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("h2", null, "Contact"),
-        __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("p", null, "\u25CB ttattataa@gmail.com\u0003"),
-        __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("p", null, "\u25CB https://github.com/meriy100"),
-        __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("p", null, "\u25CB https://qiita.com/meriy100\u0003"),
-        __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("p", null, "\u25CB https://www.facebook.com/kouta.kariyadon")))); };
+        __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("p", null, "meriy100")),
+    __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("div", { className: 'row', style: { margin: 0 } },
+        __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("div", { className: "col-md-7 offset-md-1 " + aboutStyle },
+            __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("h2", null, "About"),
+            __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("p", null, "\u5927\u5B664\u5E74\u304B\u3089\u30A8\u30F3\u30B8\u30CB\u30A2\u3068\u3057\u3066\u6D3B\u52D5"),
+            __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("p", null, "\u0003\u4E3B\u306B Web \u958B\u767A\u3092\u3084\u3063\u3066\u3044\u307E\u3059\u0003"),
+            __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("p", null, "\u5B66\u90E8\u306E\u7814\u7A76\u306F Rails \u306E\u56FD\u969B\u5316\u6539\u5584"),
+            __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("p", null, "\u0003\u4FEE\u58EB\u3067\u306F\u30BD\u30FC\u30B9\u30B3\u30FC\u30C9\u306E\u554F\u984C\u7B87\u6240\u691C\u51FA\u3092\u884C\u3044\u307E\u3057\u305F"),
+            __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("p", null, "\u00032018\u5E74\u5EA6\u3088\u308A\u65B0\u793E\u4F1A\u4EBA\u3068\u306A\u308A\u307E\u3059.  \u3088\u308D\u3057\u304F\u304A\u306D\u304C\u3044\u3057\u307E\u3059")),
+        __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("div", { className: "col-md-4" },
+            __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("div", { className: contactStyle },
+                __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("h2", null, "Contact"),
+                __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("p", null, "\u25CB ttattataa@gmail.com\u0003"),
+                __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("p", null, "\u25CB https://github.com/meriy100"),
+                __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("p", null, "\u25CB https://qiita.com/meriy100\u0003"),
+                __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("p", null, "\u25CB https://www.facebook.com/kouta.kariyadon")))))); };
 var Home = function () { return (__WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("div", null,
     __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](Header, null))); };
 /* harmony default export */ __webpack_exports__["a"] = (Home);
@@ -23870,27 +23925,495 @@ var Home = function () { return (__WEBPACK_IMPORTED_MODULE_0_react__["createElem
 
 /***/ }),
 /* 78 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * The unique id is used for unique hashes.
+ */
+var uniqueId = 0;
+/**
+ * Tag styles with this string to get unique hashes.
+ */
+exports.IS_UNIQUE = '__DO_NOT_DEDUPE_STYLE__';
+var upperCasePattern = /[A-Z]/g;
+var msPattern = /^ms-/;
+var interpolatePattern = /&/g;
+var escapePattern = /[ !#$%&()*+,./;<=>?@[\]^`{|}~"'\\]/g;
+var propLower = function (m) { return "-" + m.toLowerCase(); };
+/**
+ * CSS properties that are valid unit-less numbers.
+ */
+var cssNumberProperties = [
+    'animation-iteration-count',
+    'box-flex',
+    'box-flex-group',
+    'column-count',
+    'counter-increment',
+    'counter-reset',
+    'flex',
+    'flex-grow',
+    'flex-positive',
+    'flex-shrink',
+    'flex-negative',
+    'font-weight',
+    'line-clamp',
+    'line-height',
+    'opacity',
+    'order',
+    'orphans',
+    'tab-size',
+    'widows',
+    'z-index',
+    'zoom',
+    // SVG properties.
+    'fill-opacity',
+    'stroke-dashoffset',
+    'stroke-opacity',
+    'stroke-width'
+];
+/**
+ * Map of css number properties.
+ */
+var CSS_NUMBER = Object.create(null);
+// Add vendor prefixes to all unit-less properties.
+for (var _i = 0, _a = ['-webkit-', '-ms-', '-moz-', '-o-', '']; _i < _a.length; _i++) {
+    var prefix = _a[_i];
+    for (var _b = 0, cssNumberProperties_1 = cssNumberProperties; _b < cssNumberProperties_1.length; _b++) {
+        var property = cssNumberProperties_1[_b];
+        CSS_NUMBER[prefix + property] = true;
+    }
+}
+/**
+ * Escape a CSS class name.
+ */
+exports.escape = function (str) { return str.replace(escapePattern, '\\$&'); };
+/**
+ * Transform a JavaScript property into a CSS property.
+ */
+function hyphenate(propertyName) {
+    return propertyName
+        .replace(upperCasePattern, propLower)
+        .replace(msPattern, '-ms-'); // Internet Explorer vendor prefix.
+}
+exports.hyphenate = hyphenate;
+/**
+ * Generate a hash value from a string.
+ */
+function stringHash(str) {
+    var value = 5381;
+    var len = str.length;
+    while (len--)
+        value = (value * 33) ^ str.charCodeAt(len);
+    return (value >>> 0).toString(36);
+}
+exports.stringHash = stringHash;
+/**
+ * Transform a style string to a CSS string.
+ */
+function styleToString(key, value) {
+    if (typeof value === 'number' && value !== 0 && !CSS_NUMBER[key]) {
+        return key + ":" + value + "px";
+    }
+    return key + ":" + value;
+}
+/**
+ * Sort an array of tuples by first value.
+ */
+function sortTuples(value) {
+    return value.sort(function (a, b) { return a[0] > b[0] ? 1 : -1; });
+}
+/**
+ * Categorize user styles.
+ */
+function parseStyles(styles, hasNestedStyles) {
+    var properties = [];
+    var nestedStyles = [];
+    var isUnique = false;
+    // Sort keys before adding to styles.
+    for (var _i = 0, _a = Object.keys(styles); _i < _a.length; _i++) {
+        var key = _a[_i];
+        var value = styles[key];
+        if (value !== null && value !== undefined) {
+            if (key === exports.IS_UNIQUE) {
+                isUnique = true;
+            }
+            else if (typeof value === 'object' && !Array.isArray(value)) {
+                nestedStyles.push([key.trim(), value]);
+            }
+            else {
+                properties.push([hyphenate(key.trim()), value]);
+            }
+        }
+    }
+    return {
+        styleString: stringifyProperties(sortTuples(properties)),
+        nestedStyles: hasNestedStyles ? nestedStyles : sortTuples(nestedStyles),
+        isUnique: isUnique
+    };
+}
+/**
+ * Stringify an array of property tuples.
+ */
+function stringifyProperties(properties) {
+    return properties.map(function (_a) {
+        var name = _a[0], value = _a[1];
+        if (!Array.isArray(value))
+            return styleToString(name, value);
+        return value.map(function (x) { return styleToString(name, x); }).join(';');
+    }).join(';');
+}
+/**
+ * Interpolate CSS selectors.
+ */
+function interpolate(selector, parent) {
+    if (selector.indexOf('&') > -1) {
+        return selector.replace(interpolatePattern, parent);
+    }
+    return parent + " " + selector;
+}
+/**
+ * Recursive loop building styles with deferred selectors.
+ */
+function stylize(cache, selector, styles, list, parent) {
+    var _a = parseStyles(styles, !!selector), styleString = _a.styleString, nestedStyles = _a.nestedStyles, isUnique = _a.isUnique;
+    var pid = styleString;
+    if (selector.charCodeAt(0) === 64 /* @ */) {
+        var rule = cache.add(new Rule(selector, parent ? undefined : styleString, cache.hash));
+        // Nested styles support (e.g. `.foo > @media > .bar`).
+        if (styleString && parent) {
+            var style = rule.add(new Style(styleString, rule.hash, isUnique ? "u" + (++uniqueId).toString(36) : undefined));
+            list.push([parent, style]);
+        }
+        for (var _i = 0, nestedStyles_1 = nestedStyles; _i < nestedStyles_1.length; _i++) {
+            var _b = nestedStyles_1[_i], name = _b[0], value = _b[1];
+            pid += name + stylize(rule, name, value, list, parent);
+        }
+    }
+    else {
+        var key = parent ? interpolate(selector, parent) : selector;
+        if (styleString) {
+            var style = cache.add(new Style(styleString, cache.hash, isUnique ? "u" + (++uniqueId).toString(36) : undefined));
+            list.push([key, style]);
+        }
+        for (var _c = 0, nestedStyles_2 = nestedStyles; _c < nestedStyles_2.length; _c++) {
+            var _d = nestedStyles_2[_c], name = _d[0], value = _d[1];
+            pid += name + stylize(cache, name, value, list, key);
+        }
+    }
+    return pid;
+}
+/**
+ * Register all styles, but collect for selector interpolation using the hash.
+ */
+function composeStyles(container, selector, styles, isStyle, displayName) {
+    var cache = new Cache(container.hash);
+    var list = [];
+    var pid = stylize(cache, selector, styles, list);
+    var hash = "f" + cache.hash(pid);
+    var id = displayName ? displayName + "_" + hash : hash;
+    for (var _i = 0, list_1 = list; _i < list_1.length; _i++) {
+        var _a = list_1[_i], selector_1 = _a[0], style = _a[1];
+        var key = isStyle ? interpolate(selector_1, "." + exports.escape(id)) : selector_1;
+        style.add(new Selector(key, style.hash, undefined, pid));
+    }
+    return { cache: cache, pid: pid, id: id };
+}
+/**
+ * Cache to list to styles.
+ */
+function join(arr) {
+    var res = '';
+    for (var i = 0; i < arr.length; i++)
+        res += arr[i];
+    return res;
+}
+/**
+ * Noop changes.
+ */
+var noopChanges = {
+    add: function () { return undefined; },
+    change: function () { return undefined; },
+    remove: function () { return undefined; }
+};
+/**
+ * Implement a cache/event emitter.
+ */
+var Cache = /** @class */ (function () {
+    function Cache(hash, changes) {
+        if (hash === void 0) { hash = stringHash; }
+        if (changes === void 0) { changes = noopChanges; }
+        this.hash = hash;
+        this.changes = changes;
+        this.sheet = [];
+        this.changeId = 0;
+        this._keys = [];
+        this._children = Object.create(null);
+        this._counters = Object.create(null);
+    }
+    Cache.prototype.add = function (style) {
+        var count = this._counters[style.id] || 0;
+        var item = this._children[style.id] || style.clone();
+        this._counters[style.id] = count + 1;
+        if (count === 0) {
+            this._children[item.id] = item;
+            this._keys.push(item.id);
+            this.sheet.push(item.getStyles());
+            this.changeId++;
+            this.changes.add(item, this._keys.length - 1);
+        }
+        else {
+            // Check if contents are different.
+            if (item.getIdentifier() !== style.getIdentifier()) {
+                throw new TypeError("Hash collision: " + style.getStyles() + " === " + item.getStyles());
+            }
+            var oldIndex = this._keys.indexOf(style.id);
+            var newIndex = this._keys.length - 1;
+            var prevChangeId = this.changeId;
+            if (oldIndex !== newIndex) {
+                this._keys.splice(oldIndex, 1);
+                this._keys.push(style.id);
+                this.changeId++;
+            }
+            if (item instanceof Cache && style instanceof Cache) {
+                var prevChangeId_1 = item.changeId;
+                item.merge(style);
+                if (item.changeId !== prevChangeId_1) {
+                    this.changeId++;
+                }
+            }
+            if (this.changeId !== prevChangeId) {
+                if (oldIndex === newIndex) {
+                    this.sheet.splice(oldIndex, 1, item.getStyles());
+                }
+                else {
+                    this.sheet.splice(oldIndex, 1);
+                    this.sheet.splice(newIndex, 0, item.getStyles());
+                }
+                this.changes.change(item, oldIndex, newIndex);
+            }
+        }
+        return item;
+    };
+    Cache.prototype.remove = function (style) {
+        var count = this._counters[style.id];
+        if (count > 0) {
+            this._counters[style.id] = count - 1;
+            var item = this._children[style.id];
+            var index = this._keys.indexOf(item.id);
+            if (count === 1) {
+                delete this._counters[style.id];
+                delete this._children[style.id];
+                this._keys.splice(index, 1);
+                this.sheet.splice(index, 1);
+                this.changeId++;
+                this.changes.remove(item, index);
+            }
+            else if (item instanceof Cache && style instanceof Cache) {
+                var prevChangeId = item.changeId;
+                item.unmerge(style);
+                if (item.changeId !== prevChangeId) {
+                    this.sheet.splice(index, 1, item.getStyles());
+                    this.changeId++;
+                    this.changes.change(item, index, index);
+                }
+            }
+        }
+    };
+    Cache.prototype.merge = function (cache) {
+        for (var _i = 0, _a = cache._keys; _i < _a.length; _i++) {
+            var id = _a[_i];
+            this.add(cache._children[id]);
+        }
+        return this;
+    };
+    Cache.prototype.unmerge = function (cache) {
+        for (var _i = 0, _a = cache._keys; _i < _a.length; _i++) {
+            var id = _a[_i];
+            this.remove(cache._children[id]);
+        }
+        return this;
+    };
+    Cache.prototype.clone = function () {
+        return new Cache(this.hash).merge(this);
+    };
+    return Cache;
+}());
+exports.Cache = Cache;
+/**
+ * Selector is a dumb class made to represent nested CSS selectors.
+ */
+var Selector = /** @class */ (function () {
+    function Selector(selector, hash, id, pid) {
+        if (id === void 0) { id = "s" + hash(selector); }
+        if (pid === void 0) { pid = ''; }
+        this.selector = selector;
+        this.hash = hash;
+        this.id = id;
+        this.pid = pid;
+    }
+    Selector.prototype.getStyles = function () {
+        return this.selector;
+    };
+    Selector.prototype.getIdentifier = function () {
+        return this.pid + "." + this.selector;
+    };
+    Selector.prototype.clone = function () {
+        return new Selector(this.selector, this.hash, this.id, this.pid);
+    };
+    return Selector;
+}());
+exports.Selector = Selector;
+/**
+ * The style container registers a style string with selectors.
+ */
+var Style = /** @class */ (function (_super) {
+    __extends(Style, _super);
+    function Style(style, hash, id) {
+        if (id === void 0) { id = "c" + hash(style); }
+        var _this = _super.call(this, hash) || this;
+        _this.style = style;
+        _this.hash = hash;
+        _this.id = id;
+        return _this;
+    }
+    Style.prototype.getStyles = function () {
+        return this.sheet.join(',') + "{" + this.style + "}";
+    };
+    Style.prototype.getIdentifier = function () {
+        return this.style;
+    };
+    Style.prototype.clone = function () {
+        return new Style(this.style, this.hash, this.id).merge(this);
+    };
+    return Style;
+}(Cache));
+exports.Style = Style;
+/**
+ * Implement rule logic for style output.
+ */
+var Rule = /** @class */ (function (_super) {
+    __extends(Rule, _super);
+    function Rule(rule, style, hash, id, pid) {
+        if (style === void 0) { style = ''; }
+        if (id === void 0) { id = "a" + hash(rule + "." + style); }
+        if (pid === void 0) { pid = ''; }
+        var _this = _super.call(this, hash) || this;
+        _this.rule = rule;
+        _this.style = style;
+        _this.hash = hash;
+        _this.id = id;
+        _this.pid = pid;
+        return _this;
+    }
+    Rule.prototype.getStyles = function () {
+        return this.rule + "{" + this.style + join(this.sheet) + "}";
+    };
+    Rule.prototype.getIdentifier = function () {
+        return this.pid + "." + this.rule + "." + this.style;
+    };
+    Rule.prototype.clone = function () {
+        return new Rule(this.rule, this.style, this.hash, this.id, this.pid).merge(this);
+    };
+    return Rule;
+}(Cache));
+exports.Rule = Rule;
+/**
+ * The FreeStyle class implements the API for everything else.
+ */
+var FreeStyle = /** @class */ (function (_super) {
+    __extends(FreeStyle, _super);
+    function FreeStyle(hash, debug, id, changes) {
+        if (hash === void 0) { hash = stringHash; }
+        if (debug === void 0) { debug = typeof process !== 'undefined' && process.env['NODE_ENV'] !== 'production'; }
+        if (id === void 0) { id = "f" + (++uniqueId).toString(36); }
+        var _this = _super.call(this, hash, changes) || this;
+        _this.hash = hash;
+        _this.debug = debug;
+        _this.id = id;
+        return _this;
+    }
+    FreeStyle.prototype.registerStyle = function (styles, displayName) {
+        var debugName = this.debug ? displayName : undefined;
+        var _a = composeStyles(this, '&', styles, true, debugName), cache = _a.cache, id = _a.id;
+        this.merge(cache);
+        return id;
+    };
+    FreeStyle.prototype.registerKeyframes = function (keyframes, displayName) {
+        return this.registerHashRule('@keyframes', keyframes, displayName);
+    };
+    FreeStyle.prototype.registerHashRule = function (prefix, styles, displayName) {
+        var debugName = this.debug ? displayName : undefined;
+        var _a = composeStyles(this, '', styles, false, debugName), cache = _a.cache, pid = _a.pid, id = _a.id;
+        var rule = new Rule(prefix + " " + exports.escape(id), undefined, this.hash, undefined, pid);
+        this.add(rule.merge(cache));
+        return id;
+    };
+    FreeStyle.prototype.registerRule = function (rule, styles) {
+        this.merge(composeStyles(this, rule, styles, false).cache);
+    };
+    FreeStyle.prototype.registerCss = function (styles) {
+        this.merge(composeStyles(this, '', styles, false).cache);
+    };
+    FreeStyle.prototype.getStyles = function () {
+        return join(this.sheet);
+    };
+    FreeStyle.prototype.getIdentifier = function () {
+        return this.id;
+    };
+    FreeStyle.prototype.clone = function () {
+        return new FreeStyle(this.hash, this.debug, this.id, this.changes).merge(this);
+    };
+    return FreeStyle;
+}(Cache));
+exports.FreeStyle = FreeStyle;
+/**
+ * Exports a simple function to create a new instance.
+ */
+function create(hash, debug, changes) {
+    return new FreeStyle(hash, debug, undefined, changes);
+}
+exports.create = create;
+//# sourceMappingURL=free-style.js.map
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ }),
+/* 79 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return blackColor; });
+/* unused harmony export blackColor */
 /* unused harmony export lightColor */
 /* unused harmony export baseColor */
 /* unused harmony export subColor */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return whiteColor; });
+/* unused harmony export whiteColor */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return pureWhiteColor; });
 var blackColor = '#2C3E4F';
 var lightColor = '#81DCFA';
 var baseColor = '#0074BC';
 var subColor = '#FF91A8';
 var whiteColor = '#F6F5F2';
+var pureWhiteColor = '#FFF';
 
 
 /***/ }),
-/* 79 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(80);
+var content = __webpack_require__(81);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -23936,7 +24459,7 @@ if(false) {
 }
 
 /***/ }),
-/* 80 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(35)(false);
@@ -23950,7 +24473,7 @@ exports.push([module.i, "/*!\n * Bootstrap v4.0.0 (https://getbootstrap.com)\n *
 
 
 /***/ }),
-/* 81 */
+/* 82 */
 /***/ (function(module, exports) {
 
 
@@ -24045,11 +24568,11 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 82 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(83);
+var content = __webpack_require__(84);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -24095,7 +24618,7 @@ if(false) {
 }
 
 /***/ }),
-/* 83 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(35)(false);
