@@ -4,7 +4,7 @@ module.exports = {
   },
   output: {
     path: './build',
-    filename: '[name].bundle.js'
+    filename: '[name].release.js'
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js']
@@ -24,9 +24,19 @@ module.exports = {
         test: /\.json$/,
         loader: 'json'
       }, {
-        test: /\.css$/,
-        loader: 'style!css'
-      }
+        test: /\.(css|scss)$/, 
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              url: false,
+              sourceMap: false,
+            },
+          },
+          'sass-loader'
+        ]  
+      } ,
     ]
   }
 }
