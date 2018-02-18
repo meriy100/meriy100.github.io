@@ -39,7 +39,7 @@ class Works extends React.Component<Props, State> {
     this.state = { windowHeight: 0 }
   }
   componentDidMount () {
-    this.setState({windowHeight: window.outerHeight/2})
+    this.setState({windowHeight: screen.height/2})
   } 
   render()  {
     return(

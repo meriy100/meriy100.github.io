@@ -42,15 +42,17 @@ class WorksList extends React.Component<Props, State> {
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll.bind(this));
-    this.setState({worksListHeight: (window.outerHeight/2) - ReactDOM.findDOMNode(this).getBoundingClientRect().top})
+    window.addEventListener('touchmove', this.handleScroll.bind(this));
+    this.setState({worksListHeight: (screen.height/2) - ReactDOM.findDOMNode(this).getBoundingClientRect().top})
     this.setState({top: ReactDOM.findDOMNode(this).getBoundingClientRect().top})
   }
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll.bind(this));
+    window.addEventListener('touchmove', this.handleScroll.bind(this));
   }
   handleScroll(event:any) {
-    const newHeight = (window.outerHeight/2) - ReactDOM.findDOMNode(this).getBoundingClientRect().top
+    const newHeight = (screen.height/2) - ReactDOM.findDOMNode(this).getBoundingClientRect().top
     if ((newHeight - this.state.worksListHeight) > 0) {
       this.setState({top: ReactDOM.findDOMNode(this).getBoundingClientRect().top})
       this.setState({
