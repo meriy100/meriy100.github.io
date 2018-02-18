@@ -3,7 +3,7 @@ module.exports = {
     application: './src/application.tsx'
   },
   output: {
-    path: './build',
+    path: `${__dirname}/../build`,
     filename: '[name].release.js'
   },
   resolve: {
