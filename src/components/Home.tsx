@@ -1,8 +1,10 @@
 import * as React from 'react'
+// import * as ReactDOM from 're.act-dom'
 import * as FreeStyle from 'free-style'
 
 
 import * as Variables from '../Variables'
+import Works from './Works';
 
 var style = FreeStyle.create();
 
@@ -104,10 +106,17 @@ const Header = () => (
 
 
 
-const Home = () => (
-  <div>
-    <Header />
-  </div>
-);
+class Home extends React.Component<{}, {}> {
+  render() {
+      return (
+        <div>
+          <Header />
+          <div className='row'>
+            <Works  />
+          </div>
+        </div>
+      )
+  }
+}
 
 export default Home;
