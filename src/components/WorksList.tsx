@@ -60,25 +60,25 @@ class WorksList extends React.Component<Props, State> {
   }
   render() {
     let items = [
-      {klass: 'right', date: '2012/04', work: '青山学院大学 理工学部情報テクノロジー学科 入学'},
-      {klass: 'left', date: '2015/06 (~2018/03)', work: '株式会社スタートアップテクノロジー インターン'},
-      {klass: 'left', date: '2015/08', work: 'Life is Tech 夏季キャンプ メンター'},
-      {klass: 'right', date: '2015/12', work: 'Ruby Kaigi 2015 LT'},
-      {klass: 'right', date: '2016/03', work: '情報処理学会第58回全国大会'},
-      {klass: 'right', date: '2016/03', work: '青山学院大学 理工学部情報テクノロジー学科 卒業'},
-      {klass: 'left', date: '2016/03 (~2016/03)', work: '株式会社マネーフォワード インターン'},
-      {klass: 'right', date: '2016/04', work: '青山学院大学院 理工学研究科 知能情報コース 入学'},
-      {klass: 'left', date: '2016/08', work: '株式会社クックパッド インターン'},
-      {klass: 'left', date: '2017/02 (~2017/12)', work: 'Terminal-Q 開発業務 '},
-      {klass: 'right', date: '2018/03', work: '青山学院大学院 理工学研究科 知能情報コース 卒業'},
-      {klass: 'left', date: '2018/04', work: '株式会社スタートアップテクノロジー エンジニア'},
+      { id: 1, klass: 'right', date: '2012/04', work: '青山学院大学 理工学部情報テクノロジー学科 入学'},
+      { id: 2, klass: 'left', date: '2015/06 (~2018/03)', work: '株式会社スタートアップテクノロジー インターン'},
+      { id: 3, klass: 'left', date: '2015/08', work: 'Life is Tech 夏季キャンプ メンター'},
+      { id: 4, klass: 'right', date: '2015/12', work: 'Ruby Kaigi 2015 LT'},
+      { id: 5, klass: 'right', date: '2016/03', work: '情報処理学会第58回全国大会'},
+      { id: 6, klass: 'right', date: '2016/03', work: '青山学院大学 理工学部情報テクノロジー学科 卒業'},
+      { id: 7, klass: 'left', date: '2016/03 (~2016/03)', work: '株式会社マネーフォワード インターン'},
+      { id: 8, klass: 'right', date: '2016/04', work: '青山学院大学院 理工学研究科 知能情報コース 入学'},
+      { id: 9, klass: 'left', date: '2016/08', work: '株式会社クックパッド インターン'},
+      { id: 10, klass: 'left', date: '2017/02 (~2017/12)', work: 'Terminal-Q 開発業務 '},
+      { id: 11, klass: 'right', date: '2018/03', work: '青山学院大学院 理工学研究科 知能情報コース 卒業'},
+      { id: 12, klass: 'left', date: '2018/04', work: '株式会社スタートアップテクノロジー エンジニア'},
     ]
     return (
         <ul style={{listStyle: "none", padding: 0 }}  >
           <div className={worksListStyle}>
             <div className={centerLineStyle} style={{ height: `${this.state.worksListHeight}px` }}></div>
             {items.map(item => (
-              <WorksListItem top={this.state.top} height={this.state.worksListHeight} {...item} />
+              <WorksListItem key={item.id} top={this.state.top} height={this.state.worksListHeight} {...item} />
             ))}
             <WorksListItem top={this.state.top} height={this.state.worksListHeight} klass='center' date='' work=''></WorksListItem>
           </div>
