@@ -3,7 +3,7 @@ module.exports = {
     application: './src/application.tsx'
   },
   output: {
-    path: `${__dirname}/../build`,
+    path: './build',
     filename: '[name].release.js'
   },
   resolve: {
@@ -24,20 +24,18 @@ module.exports = {
         test: /\.json$/,
         loader: 'json'
       }, {
-        test: /\.(css|scss)$/, // 対象となるファイルの拡張子
+        test: /\.(css|scss)$/,
         use: [
           'style-loader',
           {
             loader: 'css-loader',
             options: {
-              // オプションでCSS内のurl()メソッドの取り込みを禁止する¬
               url: false,
-              // ソースマップを有効にする
               sourceMap: false,
             },
           },
           'sass-loader'
-        ]  
+        ]
       } ,
     ]
   }
