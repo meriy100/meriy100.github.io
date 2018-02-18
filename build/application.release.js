@@ -24498,7 +24498,7 @@ var Works = /** @class */ (function (_super) {
         return _this;
     }
     Works.prototype.componentDidMount = function () {
-        this.setState({ windowHeight: window.outerHeight / 2 });
+        this.setState({ windowHeight: screen.height / 2 });
     };
     Works.prototype.render = function () {
         return (__WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("article", { className: 'col-md-8 offset-md-1', style: { paddingTop: '64px', paddingBottom: this.state.windowHeight } },
@@ -24573,14 +24573,16 @@ var WorksList = /** @class */ (function (_super) {
     }
     WorksList.prototype.componentDidMount = function () {
         window.addEventListener('scroll', this.handleScroll.bind(this));
-        this.setState({ worksListHeight: (window.outerHeight / 2) - __WEBPACK_IMPORTED_MODULE_1_react_dom__["findDOMNode"](this).getBoundingClientRect().top });
+        window.addEventListener('touchmove', this.handleScroll.bind(this));
+        this.setState({ worksListHeight: (screen.height / 2) - __WEBPACK_IMPORTED_MODULE_1_react_dom__["findDOMNode"](this).getBoundingClientRect().top });
         this.setState({ top: __WEBPACK_IMPORTED_MODULE_1_react_dom__["findDOMNode"](this).getBoundingClientRect().top });
     };
     WorksList.prototype.componentWillUnmount = function () {
         window.removeEventListener('scroll', this.handleScroll.bind(this));
+        window.addEventListener('touchmove', this.handleScroll.bind(this));
     };
     WorksList.prototype.handleScroll = function (event) {
-        var newHeight = (window.outerHeight / 2) - __WEBPACK_IMPORTED_MODULE_1_react_dom__["findDOMNode"](this).getBoundingClientRect().top;
+        var newHeight = (screen.height / 2) - __WEBPACK_IMPORTED_MODULE_1_react_dom__["findDOMNode"](this).getBoundingClientRect().top;
         if ((newHeight - this.state.worksListHeight) > 0) {
             this.setState({ top: __WEBPACK_IMPORTED_MODULE_1_react_dom__["findDOMNode"](this).getBoundingClientRect().top });
             this.setState({
