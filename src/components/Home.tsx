@@ -16,7 +16,7 @@ var headerStyle = style.registerStyle({
   WebkitTransition: 'all', // note the capital 'W' here
   msTransition: 'all', // 'ms' is the only lowercase vendor prefix
   backgroundSize: "cover",
-  position: 'relative',
+  marginBottom: '',
   '&:before' : {
       content: `''`,
       background: 'rgba(44,62,79,0.5)',
@@ -83,22 +83,22 @@ const Header = () => (
       <p>meriy100</p>
     </div>
     <div className='row' style={{ margin: 0 }}>
-      <div className={`col-md-7 offset-md-1 ${aboutStyle}`}>
+      <article className={`col-md-7 offset-md-1 ${aboutStyle}`}>
         <h2>About</h2>
         <p>大学4年からエンジニアとして活動</p>
         <p>主に Web 開発をやっています</p>
         <p>学部の研究は Rails の国際化改善</p>
         <p>修士ではソースコードの問題箇所検出を行いました</p>
         <p>2018年度より新社会人となります.  よろしくおねがいします</p>
-      </div>
+      </article>
       <div className={`col-md-4`}>
-        <div className={contactStyle} >
+        <address className={contactStyle} >
           <h2>Contact</h2>
           <p>○ ttattataa@gmail.com</p>
           <p>○ https://github.com/meriy100</p>
           <p>○ https://qiita.com/meriy100</p>
           <p>○ https://www.facebook.com/kouta.kariyadon</p>
-        </div>
+        </address>
       </div>
     </div>
   </div>

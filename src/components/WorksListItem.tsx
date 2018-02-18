@@ -16,7 +16,7 @@ var worksListItemStyle = style.registerStyle({
     marginBottom: 0,
   },
   '&:after' : {
-    borderBottom: '1px solid',
+    borderBottom: '3px solid',
     borderColor: Variables.blackColor,
     transition: 'all 500ms 0s ease',
     height: '100%',

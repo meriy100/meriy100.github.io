@@ -14,7 +14,7 @@ var worksListStyle = style.registerStyle({
 var centerLineStyle = style.registerStyle({
   position: 'absolute',
   width: '50%',
-  borderRight: '1px solid',
+  borderRight: '3px solid',
   borderColor: Variables.blackColor,
   marginRight: '50%',
   // height: '100%',
@@ -70,6 +70,8 @@ class WorksList extends React.Component<Props, State> {
       {klass: 'right', date: '2016/04', work: '青山学院大学院 理工学研究科 知能情報コース 入学'},
       {klass: 'left', date: '2016/08', work: '株式会社クックパッド インターン'},
       {klass: 'left', date: '2017/02 (~2017/12)', work: 'Terminal-Q 開発業務 '},
+      {klass: 'right', date: '2018/03', work: '青山学院大学院 理工学研究科 知能情報コース 卒業'},
+      {klass: 'left', date: '2018/04', work: '株式会社スタートアップテクノロジー エンジニア'},
     ]
     return (
         <ul style={{listStyle: "none", padding: 0 }}  >
