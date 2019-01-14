@@ -19,7 +19,6 @@ class App extends React.Component {
       <Router history={customHistory}>
         <div className="MainContent">
           <Route exact path="/" component={Home} />
-          <h1 >test</h1>
         </div>
       </Router>
     );
