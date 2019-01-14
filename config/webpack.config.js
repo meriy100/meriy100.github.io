@@ -1,4 +1,5 @@
 module.exports = {
+  mode: 'development',
   devtool: 'inline-source-map',
   entry: {
     application: './src/application.tsx'
@@ -15,7 +16,7 @@ module.exports = {
       {
         test: /\.(ts|tsx)?$/,
         use: [
-          {loader: 'ts-loader'}
+          { loader: 'ts-loader' }
         ]
       }, {
         test: /\.(js|jsx)$/,
