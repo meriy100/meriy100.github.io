@@ -36,3 +36,5 @@ build/application.bundle.js
 .rvmrc
 
 node_modules/
+
+.idea/

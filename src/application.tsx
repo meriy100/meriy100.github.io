@@ -10,14 +10,16 @@ import Home from './components/Home';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/style.scss'
 
-const customeHistory = createHistory();
+const customHistory = createHistory();
+
 
 class App extends React.Component {
   render() {
     return (
-      <Router history={customeHistory}>
+      <Router history={customHistory}>
         <div className="MainContent">
           <Route exact path="/" component={Home} />
+          <h1 >test</h1>
         </div>
       </Router>
     );
