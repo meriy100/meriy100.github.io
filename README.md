@@ -1,11 +1,8 @@
 # meriy100.github.io
 
 
-[View](https://meriy100.github.io)
+[View new Portofolio](https://github.com/meriy100/portfolio)
 
-This repositories is my profile site.
-
-education and ...
 
 
 
